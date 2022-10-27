@@ -1,0 +1,97 @@
+/// Multimedia controls with a few keys setup for macro functions
+/// Designed for the 12-key Macro Pad sold by me on eBay
+
+#include <HID-Project.h>
+
+void setup() {
+  pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
+  pinMode(4, INPUT_PULLUP);
+  pinMode(5, INPUT_PULLUP);
+  pinMode(6, INPUT_PULLUP);
+  pinMode(7, INPUT_PULLUP);
+  pinMode(8, INPUT_PULLUP);
+  pinMode(9, INPUT_PULLUP);
+  pinMode(10, INPUT_PULLUP);
+  pinMode(14, INPUT_PULLUP);
+  pinMode(15, INPUT_PULLUP);
+  pinMode(16, INPUT_PULLUP);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (digitalRead(2) == 0){
+    Consumer.write(MEDIA_VOLUME_UP);
+    delay(200);
+  }
+  
+  if (digitalRead(3) == 0){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('7');
+    delay(200);
+  }
+  if (digitalRead(4) == 0){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('6');
+    delay(200);
+  }
+
+  if (digitalRead(5) == 0){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('5');
+    delay(200);
+  }
+
+  if (digitalRead(6) == 0){
+    Consumer.write(MEDIA_VOLUME_DOWN);
+    delay(200);
+  }
+
+  if (digitalRead(7) == 0){
+    Consumer.write(MEDIA_PREVIOUS);
+    delay(150);
+  }
+
+  if (digitalRead(8) == 0){
+    Consumer.write(MEDIA_PLAY_PAUSE);
+    delay(200);
+  }
+
+
+  if (digitalRead(9) == 0){
+    Consumer.write(MEDIA_NEXT);
+    delay(150);
+  }
+
+  if (digitalRead(10) == 0){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('1');
+    delay(200);
+  }
+
+  if (digitalRead(14) == 0){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('3');
+    delay(200);
+  }
+
+  if (digitalRead(15) == 0){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('4');
+    delay(200);
+  }
+
+  if (digitalRead(16) == 0){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('2');
+    delay(200);
+  }
+  Keyboard.end();
+}
